@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="favcoin.png" />
+    <link rel="stylesheet" href="styles.css">
+    <title>PRIME DEALS - Payment</title>
+</head>
+<body>
+    <header class="header">
+        <div class="navbar">
+            <div class="logo">PRIME DEALS</div>
+            <nav>
+                <ul>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>PRIME DEALS - Payment</h1>
+        <div class="form-container">
+            <form id="ottForm">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <!-- Display the selected plan here -->
+                <label for="selectedPlan">Selected Plan</label>
+                <input type="text" id="selectedPlan" name="selectedPlan" readonly>
+
+                <label for="bankingName">Banking Name</label>
+                <input type="text" id="bankingName" name="bankingName" required>
+
+                <label for="amount">Amount to Pay</label>
+                <input type="text" id="amount" name="amount" required readonly>
+
+                <h3>Scan to Pay</h3>
+                <div class="qrcode">
+                    <img src="phonepay.jpg" alt="Payment QR Code">
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+
+            <!-- 'Back to Plans' button -->
+            <button onclick="window.location.href='index.html'" class="back-button">Back to Plans</button>
+        </div>
+
+        <div class="thank-you-message" id="thankYouMessage" style="display:none;">
+            Thank you for choosing Prime Deals! We will verify your payment and you will receive your account details in 5 mins to your registered email.
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2024 Prime Deals. All rights reserved.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("lVEdOKIhaN5C_hktq");
+        })();
+
+        // Function to get query parameters from the URL
+        function getQueryParams() {
+            let params = {};
+            window.location.search.substr(1).split("&").forEach(function(param) {
+                let pair = param.split("=");
+                params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+            });
+            return params;
+        }
+
+        // Get selected plan and price from the URL and display in the form
+        let params = getQueryParams();
+        document.getElementById('selectedPlan').value = params.plan || 'N/A';
+        document.getElementById('amount').value = `$${params.price}` || 'N/A';
+
+        document.getElementById('ottForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let plan = document.getElementById('selectedPlan').value;
+            let bankingName = document.getElementById('bankingName').value;
+            let amount = document.getElementById('amount').value;
+
+            // Send email with user details
+            emailjs.send("service_4z53bkp", "template_sup9h9n", {
+                name: name,
+                email: email,
+                plan: plan,
+                amount: amount
+            }).then(function(response) {
+                document.getElementById('thankYouMessage').style.display = 'block';
+            }, function(error) {
+                alert("Failed to send email: " + error.text);
+            });
+        });
+    </script>
+</body>
+</html>

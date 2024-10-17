@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="favcoin.png" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Offers - Prime Deals</title>
+    <style>
+        .offer-details {
+            display: none; /* Initially hidden */
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="navbar">
+                <div class="logo">Prime Deals</div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <div class="container">
+            <h1>Current Offers</h1>
+            <div class="card-container">
+                <div class="card">
+                    <h2>Basic Plan</h2>
+                    <p>Get access to basic features for just $5/month!</p>
+                    <button onclick="showDetails('basic-details')">View More</button>
+                    <div class="offer-details" id="basic-details">The Basic Plan offers limited features, suitable for personal use.</div>
+                    <button class="buy-now" onclick="window.location.href='index.html'">Buy Now</button>
+                </div>
+                <div class="card">
+                    <h2>Standard Plan</h2>
+                    <p>Enjoy additional features for only $10/month!</p>
+                    <button onclick="showDetails('standard-details')">View More</button>
+                    <div class="offer-details" id="standard-details">The Standard Plan includes extra features for more frequent users.</div>
+                    <button class="buy-now" onclick="window.location.href='index.html'">Buy Now</button>
+                </div>
+                <div class="card">
+                    <h2>Premium Plan</h2>
+                    <p>Unlock all features with our Premium Plan at $15/month!</p>
+                    <button onclick="showDetails('premium-details')">View More</button>
+                    <div class="offer-details" id="premium-details">The Premium Plan provides full access to all features, perfect for businesses.</div>
+                    <button class="buy-now" onclick="window.location.href='index.html'">Buy Now</button>
+                </div>
+                <div class="card">
+                    <h2>Family Plan</h2>
+                    <p>Get 4 accounts for the price of 3 - only $30/month!</p>
+                    <button onclick="showDetails('family-details')">View More</button>
+                    <div class="offer-details" id="family-details">The Family Plan is great for families who want to share accounts and save money.</div>
+                    <button class="buy-now" onclick="window.location.href='index.html'">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            &copy; 2024 Prime Deals. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        function showDetails(id) {
+            const details = document.getElementById(id);
+            details.style.display = details.style.display === 'none' || details.style.display === '' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>

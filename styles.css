@@ -1,0 +1,189 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes full height */
+}
+
+/* Header Styles */
+.header {
+    background-color: #333;
+    padding: 15px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Container Styles */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    flex: 1; /* Allows container to grow and push footer down */
+}
+
+/* Form Container Styles */
+.form-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.qrcode {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.qrcode img {
+    max-width: 200px;
+    height: auto;
+}
+
+button {
+    background: linear-gradient(135deg, #ff6600, #ffcc00);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ffcc00, #ff6600);
+    transform: translateY(-2px);
+}
+
+/* Thank You Message Styles */
+.thank-you-message {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: white;
+    margin-top: auto; /* This pushes the footer to the bottom */
+}
+
+/* Responsive Styles */
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Stack navbar items */
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        display: block; /* Stack list items */
+        margin: 5px 0; /* Margin between items */
+    }
+
+    .container {
+        padding: 10px; /* Reduce padding */
+    }
+
+    .logo {
+        font-size: 20px; /* Adjust logo size */
+    }
+
+    h1 {
+        font-size: 24px; /* Smaller heading size */
+    }
+
+    input, select {
+        font-size: 14px; /* Smaller font size */
+    }
+
+    button {
+        font-size: 14px; /* Smaller button size */
+    }
+
+    .qrcode img {
+        max-width: 150px; /* Smaller QR code */
+    }
+}
+
+/* Small Devices (Phones) */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 15px; /* Reduce form padding */
+    }
+
+    h1 {
+        font-size: 20px; /* Further adjust heading */
+    }
+
+    input, select {
+        font-size: 14px; /* Consistent font size */
+    }
+
+    button {
+        padding: 8px 10px; /* Smaller button padding */
+    }
+}

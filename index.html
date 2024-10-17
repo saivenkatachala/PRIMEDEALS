@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="favcoin.png" />
+    <title>PRIME DEALS</title>
+    <style>
+        /* General styles */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* Make the body a flex container */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            flex: 1;
+            padding: 2em;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #333;
+            padding: 1em;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar nav ul li {
+            margin-left: 20px;
+        }
+
+        .navbar nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Card styles */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 2em;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) rotateY(5deg);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .card h2 {
+            color: #333;
+            margin: 15px 0 10px;
+        }
+
+        .card p {
+            padding: 0 15px;
+            color: #777;
+        }
+
+        .card button {
+            background-color: #ff6600;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .card button:hover {
+            background-color: #e65c00;
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            margin-top: auto; /* Push the footer to the bottom */
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="navbar">
+            <div class="logo">PRIME DEALS</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="offers.html">Offers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Choose Your Streaming Service</h1>
+        <div class="card-container">
+            <!-- Amazon Prime -->
+            <div class="card">
+                <img src="a1.png" alt="Amazon Prime" class="card-image">
+                <h2>Amazon Prime</h2>
+                <p>Enjoy exclusive Amazon Prime content with various plans.</p>
+                <button onclick="window.location.href='amazon.html'">View More</button>
+            </div>
+
+            <!-- Netflix -->
+            <div class="card">
+                <img src="n1.png" alt="Netflix" class="card-image">
+                <h2>Netflix</h2>
+                <p>Stream the latest Netflix originals and movies.</p>
+                <button onclick="window.location.href='netflix.html'">View More</button>
+            </div>
+
+            <!-- Disney+ -->
+            <div class="card">
+                <img src="d1.png" alt="Disney Plus" class="card-image">
+                <h2>Disney+</h2>
+                <p>Watch Disney, Marvel, and Star Wars all in one place.</p>
+                <button onclick="window.location.href='disneyplus.html'">View More</button>
+            </div>
+
+            <!-- AHA -->
+            <div class="card">
+                <img src="aha.png" alt="AHA" class="card-image">
+                <h2>AHA</h2>
+                <p>Stream the latest AHA originals and movies.</p>
+                <button onclick="window.location.href='aha.html'">View More</button>
+            </div>
+
+            <!-- ZEE5 -->
+            <div class="card">
+                <img src="ZEE5-Logo.png" alt="ZEE5" class="card-image">
+                <h2>ZEE5</h2>
+                <p>Enjoy live stream and exclusive content from ZEE5.</p>
+                <button onclick="window.location.href='zee5.html'">View More</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2024 Prime Deals. All rights reserved.
+    </footer>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney+ Hotstar Plans</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffcc33, #ff6699);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .header {
+            background-color: #ff6699;
+            padding: 10px;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        td {
+            background-color: #fafafa;
+        }
+
+        a {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #ff6699;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        a:hover {
+            background-color: #ff3366;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #ff6699;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navbar -->
+    <header class="header">
+        <div class="navbar">
+            <div class="logo">PRIME DEALS</div>
+            <nav>
+                <ul>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Container for Amazon Prime Plans -->
+    <div class="container">
+        <h1>Disney+ Hotstar Plans</h1>
+        <table>
+            <tr>
+                <th>Plan Name</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>Basic Plan</td>
+                <td>$5</td>
+                <td><a href="payment.html?plan=Basic%20Plan&price=5">Buy Now</a></td>
+            </tr>
+            <tr>
+                <td>Standard Plan</td>
+                <td>$10</td>
+                <td><a href="payment.html?plan=Standard%20Plan&price=10">Buy Now</a></td>
+            </tr>
+            <tr>
+                <td>Premium Plan</td>
+                <td>$15</td>
+                <td><a href="payment.html?plan=Premium%20Plan&price=15">Buy Now</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Prime Deals. All rights reserved.
+    </footer>
+</body>
+</html>
